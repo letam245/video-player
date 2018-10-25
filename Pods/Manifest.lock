@@ -1,0 +1,16 @@
+PODS:
+  - HCVimeoVideoExtractor (0.0.1)
+
+DEPENDENCIES:
+  - HCVimeoVideoExtractor
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - HCVimeoVideoExtractor
+
+SPEC CHECKSUMS:
+  HCVimeoVideoExtractor: d3c251280f7027ffd324266e1930b3618e0adb46
+
+PODFILE CHECKSUM: 118c873901869030723f7be013a3c991d1dca971
+
+COCOAPODS: 1.5.3
