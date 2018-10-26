@@ -29,14 +29,35 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oYG-V1-1zN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="179.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o9D-CI-Fy1">
+                                                    <rect key="frame" x="0.0" y="32.5" width="375" height="11"/>
+                                                    <color key="backgroundColor" red="0.95294117647058818" green="0.43529411764705883" blue="0.12941176470588234" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzu-46-dMD">
+                                                    <rect key="frame" x="20" y="32.5" width="335" height="11"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                                    </variation>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="oYG-V1-1zN" firstAttribute="top" secondItem="SLg-zD-xd8" secondAttribute="top" id="3FJ-Wd-Ft0"/>
+                                                <constraint firstAttribute="trailing" secondItem="yzu-46-dMD" secondAttribute="trailing" constant="20" id="4hp-LY-Ou6"/>
+                                                <constraint firstAttribute="bottom" secondItem="yzu-46-dMD" secondAttribute="bottom" id="4xg-0Z-bly"/>
+                                                <constraint firstAttribute="bottom" secondItem="o9D-CI-Fy1" secondAttribute="bottom" id="9wj-DW-pOM"/>
                                                 <constraint firstItem="oYG-V1-1zN" firstAttribute="leading" secondItem="SLg-zD-xd8" secondAttribute="leading" id="AFS-fr-kua"/>
                                                 <constraint firstAttribute="trailing" secondItem="oYG-V1-1zN" secondAttribute="trailing" id="ANY-A2-cdw"/>
+                                                <constraint firstItem="yzu-46-dMD" firstAttribute="height" secondItem="SLg-zD-xd8" secondAttribute="height" multiplier="0.25" id="MRn-zv-X9I"/>
+                                                <constraint firstItem="o9D-CI-Fy1" firstAttribute="height" secondItem="SLg-zD-xd8" secondAttribute="height" multiplier="0.25" id="OmO-Ms-KlJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="o9D-CI-Fy1" secondAttribute="trailing" id="YXL-Bk-E74"/>
                                                 <constraint firstAttribute="bottom" secondItem="oYG-V1-1zN" secondAttribute="bottom" id="kCo-Q6-oIQ"/>
+                                                <constraint firstItem="o9D-CI-Fy1" firstAttribute="leading" secondItem="SLg-zD-xd8" secondAttribute="leading" id="pTd-iR-34T"/>
+                                                <constraint firstItem="yzu-46-dMD" firstAttribute="leading" secondItem="SLg-zD-xd8" secondAttribute="leading" constant="20" id="wIB-go-vTe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

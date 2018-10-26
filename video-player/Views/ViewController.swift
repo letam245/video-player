@@ -42,6 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCell(withIdentifier: "BasicCell")!
+
         
         
         HCVimeoVideoExtractor.fetchVideoURLFrom(id: videos[indexPath.row].videoID, completion: { ( video:HCVimeoVideo?, error:Error?) -> Void in
@@ -54,10 +55,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 print("Invalid video object")
                 return
             }
+           
             
             DispatchQueue.main.async() {
                 
                 //cell.textLabel?.text = vid.title
+                
+                let label = cell.viewWithTag(2) as! UILabel
+                
+                label.text = vid.title
+                
+                
                 
                 if let url = vid.thumbnailURL[.Quality640] {
                     self.getDataFromUrl(url: url) { data, response, error in
@@ -70,10 +78,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             }
         })
-        
-        
-        
-        
         
         
         
