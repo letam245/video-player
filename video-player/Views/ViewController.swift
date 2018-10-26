@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //var videos : [Video] = [Video]()
     var videos = VideoArrayModel().videos
+    var selectedVideoID : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +66,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 label.text = vid.title
                 
-                
+                //label.lineBreakMode = .byWordWrapping
+                //label.numberOfLines = 0
+                label.adjustsFontSizeToFitWidth = true
                 
                 if let url = vid.thumbnailURL[.Quality640] {
                     self.getDataFromUrl(url: url) { data, response, error in
@@ -124,6 +127,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedVideoID = videos[indexPath.row].videoID
+        
+         self.performSegue(withIdentifier: "goToDeltailVideo", sender: self)
+       
+        
+    }
+    
     /*
     func downloadImage(url: URL) {
         getDataFromUrl(url: url) { data, response, error in
@@ -139,6 +150,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         URLSession.shared.dataTask(with: url) { data, response, error in
             completion(data, response, error)
             }.resume()
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detaiVC = segue.destination as! VideoDetailViewController
+        
+        detaiVC.selectedVideoId = self.selectedVideoID
+        
+        HCVimeoVideoExtractor.fetchVideoURLFrom(id: selectedVideoID!, completion: { ( video:HCVimeoVideo?, error:Error?) -> Void in
+            if let err = error {
+                print("Error = \(err.localizedDescription)")
+                return
+            }
+            
+            guard let selectedVideo = video else {
+                print("Invalid video object")
+                return
+            }
+        
+            
+           
+            detaiVC.selectedVideo = selectedVideo
+            
+            
+        })
+        
+
     }
     
 
