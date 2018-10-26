@@ -14,11 +14,10 @@ class VideoModel: NSObject {
         //Create an empty array of video objects
         var videos = [Video]()
         
-        //create a video object
+
+        // YOUTUBE
         let video1 = Video()
-        //Assign properties
-        //video1.videoID = "DtaBa6G5a_E"
-        video1.videoID = "203165890"
+        video1.videoID = "DtaBa6G5a_E"
         video1.videoTitle = "How To Make an App - Ep 1 - Tools and Materials"
         video1.videoDescription = "This lesson is an orientation of what you need to start making apps  and the tools and resources that Apple provides."
         //append to the video array
@@ -27,8 +26,7 @@ class VideoModel: NSObject {
         
         let video2 = Video()
         //Assign properties
-        //video2.videoID = "dVROCK8BGRY"
-        video2.videoID = "286570272"
+        video2.videoID = "dVROCK8BGRY"
         video2.videoTitle = "How To Make an App - Ep 2 - Xcode 6 and Playgrounds"
         video2.videoDescription = "This lesson will help you get your feet wet with Xcode 6 and experimenting with some basic Swift code. Follow along and if you've never programmed before, you'll see that it's not hard!"
         //append to the video array
@@ -38,8 +36,7 @@ class VideoModel: NSObject {
 
         let video3 = Video()
         //Assign properties
-        //video3.videoID = "G44oIktEvg8"
-        video3.videoID = "288253576"
+        video3.videoID = "G44oIktEvg8"
         video3.videoTitle = "How To Make an App - Ep 3 - Xcode 6 Tutorial"
         video3.videoDescription = "In this lesson, we walk through the main components and areas of Xcode 6. Take a tour of the app where you'll spend most of your time in!"
         //append to the video array
@@ -49,22 +46,11 @@ class VideoModel: NSObject {
         
         let video4 = Video()
         //Assign properties
-        //video4.videoID = "ibc1nim--Rc"
-        video4.videoID = "283075924"
+        video4.videoID = "ibc1nim--Rc"
         video4.videoTitle = "How To Make an App - Ep 4 - App Anatomy"
         video4.videoDescription = "This video series uses the latest and greatest from Apple (Xcode 6, Swift, iOS 8) and will teach a beginner with no programming experience how to make iPhone apps. I'm creating these videos with the assumption that the student has no prior knowledge and is starting from scratch."
         //append to the video array
         videos.append(video4)
-        
-        
-        
-        let video5 = Video()
-        //Assign properties
-        video5.videoID = "280633411"
-        video5.videoTitle = "Summit Official Trailer (2018)"
-        video5.videoDescription = "Enter Summit Now"
-        //append to the video array
-        videos.append(video5)
         
         
         

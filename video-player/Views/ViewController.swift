@@ -14,14 +14,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tableView: UITableView!
     
-    var videos : [Video] = [Video]()
+    //var videos : [Video] = [Video]()
+    var videos = VideoArrayModel().videos
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let model = VideoModel()
-        self.videos = model.getVideos()
+        //let model = VideoModel()
+        //self.videos = model.getVideos()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
