@@ -7,6 +7,7 @@ target 'video-player' do
 
   # Pods for video-player
     pod 'HCVimeoVideoExtractor'
-
+    pod 'Alamofire', '~> 4.7'
+    pod 'SwiftyJSON'
 
 end

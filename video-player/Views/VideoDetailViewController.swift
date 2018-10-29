@@ -7,12 +7,13 @@
 //
 
 import UIKit
-import HCVimeoVideoExtractor
+//import HCVimeoVideoExtractor
 
 class VideoDetailViewController: UIViewController {
 
-    var selectedVideo : HCVimeoVideo?
-    var selectedVideoId : String?
+    //var selectedVideo : HCVimeoVideo?
+    var selectedVideo : Video?
+    //var selectedVideoId : String?
     
 
     @IBOutlet weak var webView: UIWebView!
@@ -29,29 +30,30 @@ class VideoDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         if selectedVideo != nil {
-            titleLabel.text = selectedVideo?.title
-            
-        }
+            titleLabel.text = selectedVideo!.videoTitle
+            descriptionLabel.text = selectedVideo?.videoDescription
         
-        if selectedVideoId != nil {
             let width = CGFloat(self.view.frame.size.width)
             let height = CGFloat(width/320 * 180)
             
             
             let widthString = "\(width)"
             let heightString = "\(height)"
+            let selectedVideoIdStr = "\(selectedVideo!.videoID)"
             
             webViewHeightConstrain.constant = height
+            webView.allowsInlineMediaPlayback = true
+            
+            let videoEmbedString = "<html><head><style type=\"text/css\">body {background-color: transparent;color: white;}</style></head><body style=\"margin:0\"><iframe frameBorder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen height=\"" + heightString + "\" width=\"" + widthString + "\" src=\"https://www.youtube.com/embed/" + selectedVideoIdStr + "?playsinline=1\"></iframe></body></html>"
+            
+            //let videoEmbedString = "<html><head><style type=\"text/css\">body {background-color: transparent;color: white;}</style></head><body style=\"margin:0\"><iframe frameBorder=\"0\" height=\"" + heightString + "\" width=\"" + widthString + "\" src=\"https://player.vimeo.com/video/" + selectedVideo.videoID + "?autoplay=1 allowFullScreen\"></iframe></body></html>"
+            
+            self.webView.loadHTMLString(videoEmbedString, baseURL: nil)
             
             
-            let videoEmbedString = "<html><head><style type=\"text/css\">body {background-color: transparent;color: white;}</style></head><body style=\"margin:0\"><iframe frameBorder=\"0\" height=\"" + heightString + "\" width=\"" + widthString + "\" src=\"https://player.vimeo.com/video/" + selectedVideoId! + "?autoplay=1 mozallowfullscreen allowfullscreen\"></iframe></body></html>"
-            
-               self.webView.loadHTMLString(videoEmbedString, baseURL: nil)
+            //<iframe width="560" height="315" src="https://www.youtube.com/embed/z8pbEHa2agk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        
         }
-        
-     
-       //<iframe src="https://player.vimeo.com/video/292993870?autoplay=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        
     }
     
 

@@ -9,21 +9,26 @@
 import UIKit
 import HCVimeoVideoExtractor
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, VideoModelDelegate {
 
 
     @IBOutlet weak var tableView: UITableView!
     
-    //var videos : [Video] = [Video]()
-    var videos = VideoArrayModel().videos
-    var selectedVideoID : String?
+    var videos : [Video] = [Video]()
+    var selectedVideo : Video?
+    
+    //var videos = VideoArrayModel().videos
+    //var selectedVideoID : String?
+    
+    let model : VideoModel = VideoModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //let model = VideoModel()
+        self.model.delegate = self
         //self.videos = model.getVideos()
+        model.getFeedVideos()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -32,9 +37,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    //MARK: - VideoModelDelegate Method
+    func dataReady() {
+        self.videos = self.model.videoArray
+        self.tableView.reloadData()
+
+    }
+    
+    // MARK: - TableView Delegate method
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return (self.view.frame.width / 640) * 360
+        return (self.view.frame.width / 320) * 180
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,9 +56,54 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCell(withIdentifier: "BasicCell")!
+        
+        
+        let videoTitle = videos[indexPath.row].videoTitle
+        
+        //Customize cell to display video title
+        let label = cell.viewWithTag(2) as! UILabel
+        label.text = videoTitle
+        
+        
+        //Construct the video thumnail url
+        let videoThumbnailUrLString = videos[indexPath.row].videoThumbnailUrl
+        
+        
+        //Create an NSURL object
+        let videoThumbnailUrl = NSURL(string: videoThumbnailUrLString)
+        
+        if videoThumbnailUrl != nil {
+            //Create an NSURLRequest object
+            let request = URLRequest(url: videoThumbnailUrl! as URL)
+            
+            //Create an NSURLSession
+            let session = URLSession.shared
+            
+            //Create a datatask and pass in the request
+            let dataTask = session.dataTask(with: request) { (data: Data?, response:URLResponse?, error: Error?) in
+                
+                DispatchQueue.main.async() {
+                    // Get a reference to the imageView element of teh cell
+                    let imageView = cell.viewWithTag(1) as! UIImageView
+                    
+                    //Create an image object from the data and asisgn it into the imageview
+                    if data != nil {
+                         imageView.image = UIImage(data: data!)
+                    }
+                   
+                }
+                
+            }
+            
+            dataTask.resume()
+            
+            
+        }
+        
+        
 
         
-        
+        /*
         HCVimeoVideoExtractor.fetchVideoURLFrom(id: videos[indexPath.row].videoID, completion: { ( video:HCVimeoVideo?, error:Error?) -> Void in
             if let err = error {
                 print("Error = \(err.localizedDescription)")
@@ -81,56 +139,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             }
         })
-        
-        
-        
-        /*
-        //let videoTitle = videos[indexPath.row].videoTitle
-        
-        //Customize cell to display video title
-        //cell.textLabel?.text = videoTitle
-        
-        
-        //Construct the video thumnail url
-        let videoThumbnailUrLString = "http://img.youtube.com/vi/" + videos[indexPath.row].videoID + "/mqdefault.jpg"
-        
-        
-        //Create an NSURL object
-        let videoThumbnailUrl = NSURL(string: videoThumbnailUrLString)
-        
-        if videoThumbnailUrl != nil {
-            //Create an NSURLRequest object
-            let request = URLRequest(url: videoThumbnailUrl! as URL)
-            
-            //Create an NSURLSession
-            let session = URLSession.shared
-            
-            //Create a datatask and pass in the request
-            let dataTask = session.dataTask(with: request) { (data: Data?, response:URLResponse?, error: Error?) in
-                
-                DispatchQueue.main.async() {
-                    // Get a reference to the imageView element of teh cell
-                    let imageView = cell.viewWithTag(1) as! UIImageView
-                    
-                    //Create an image object from the data and asisgn it into the imageview
-                    imageView.image = UIImage(data: data!)
-                }
-                
-            }
-            
-            dataTask.resume()
-            
-            
-        }
         */
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedVideoID = videos[indexPath.row].videoID
         
-         self.performSegue(withIdentifier: "goToDeltailVideo", sender: self)
+        selectedVideo = videos[indexPath.row]
+        
+        self.performSegue(withIdentifier: "goToDeltailVideo", sender: self)
        
         
     }
@@ -144,20 +161,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
-    */
+ 
     
     func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { data, response, error in
             completion(data, response, error)
             }.resume()
     }
-    
+    */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detaiVC = segue.destination as! VideoDetailViewController
         
-        detaiVC.selectedVideoId = self.selectedVideoID
+        //detaiVC.selectedVideoId = self.selectedVideoID
+        detaiVC.selectedVideo = self.selectedVideo
         
+        
+        /*
         HCVimeoVideoExtractor.fetchVideoURLFrom(id: selectedVideoID!, completion: { ( video:HCVimeoVideo?, error:Error?) -> Void in
             if let err = error {
                 print("Error = \(err.localizedDescription)")
@@ -170,11 +190,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         
             
-           
             detaiVC.selectedVideo = selectedVideo
             
             
         })
+        */
         
 
     }

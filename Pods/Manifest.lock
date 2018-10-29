@@ -1,16 +1,24 @@
 PODS:
+  - Alamofire (4.7.3)
   - HCVimeoVideoExtractor (0.0.1)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
   - HCVimeoVideoExtractor
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - HCVimeoVideoExtractor
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   HCVimeoVideoExtractor: d3c251280f7027ffd324266e1930b3618e0adb46
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 118c873901869030723f7be013a3c991d1dca971
+PODFILE CHECKSUM: 8ff375d32164e223e34bfbbb296bdf1920de7c9d
 
 COCOAPODS: 1.5.3
