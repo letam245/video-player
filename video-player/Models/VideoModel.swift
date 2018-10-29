@@ -24,7 +24,7 @@ class VideoModel: NSObject {
     var delegate:VideoModelDelegate?
     
     func getFeedVideos() {
-        Alamofire.request(requestUrl, method: .get, parameters: ["maxResults": "12", "part": "snippet", "playlistId": UPLOADS_PLAYIST_ID, "key": API_KEY]).responseJSON {
+        Alamofire.request(requestUrl, method: .get, parameters: ["maxResults": "25", "part": "snippet", "playlistId": UPLOADS_PLAYIST_ID, "key": API_KEY]).responseJSON {
             response in
             if response.result.isSuccess {
                 let resJSON : JSON = JSON(response.result.value!)
@@ -41,7 +41,7 @@ class VideoModel: NSObject {
                     videoObj.videoID = video["snippet"]["resourceId"]["videoId"].stringValue
                     videoObj.videoTitle = video["snippet"]["title"].stringValue
                     videoObj.videoDescription = video["snippet"]["description"].stringValue
-                    videoObj.videoThumbnailUrl = video["snippet"]["thumbnails"]["maxres"]["url"].stringValue
+                    videoObj.videoThumbnailUrl = video["snippet"]["thumbnails"]["medium"]["url"].stringValue
                    
                     
                     arrayOfVideos.append(videoObj)
