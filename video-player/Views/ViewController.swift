@@ -17,9 +17,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var videos : [Video] = [Video]()
     var selectedVideo : Video?
     
-    //var videos = VideoArrayModel().videos
-    //var selectedVideoID : String?
-    
     let model : VideoModel = VideoModel()
     
     override func viewDidLoad() {
@@ -97,49 +94,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             dataTask.resume()
             
-            
         }
         
-        
-
-        
-        /*
-        HCVimeoVideoExtractor.fetchVideoURLFrom(id: videos[indexPath.row].videoID, completion: { ( video:HCVimeoVideo?, error:Error?) -> Void in
-            if let err = error {
-                print("Error = \(err.localizedDescription)")
-                return
-            }
-            
-            guard let vid = video else {
-                print("Invalid video object")
-                return
-            }
-           
-            
-            DispatchQueue.main.async() {
-                
-                //cell.textLabel?.text = vid.title
-                
-                let label = cell.viewWithTag(2) as! UILabel
-                
-                label.text = vid.title
-                
-                //label.lineBreakMode = .byWordWrapping
-                //label.numberOfLines = 0
-                label.adjustsFontSizeToFitWidth = true
-                
-                if let url = vid.thumbnailURL[.Quality640] {
-                    self.getDataFromUrl(url: url) { data, response, error in
-                        guard let data = data, error == nil else { return }
-                        DispatchQueue.main.async() {
-                            let imageView = cell.viewWithTag(1) as! UIImageView
-                            imageView.image = UIImage(data: data)
-                        }
-                    }
-                }
-            }
-        })
-        */
         return cell
     }
     
@@ -152,51 +108,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    /*
-    func downloadImage(url: URL) {
-        getDataFromUrl(url: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            DispatchQueue.main.async() {
-                self.imageView.image = UIImage(data: data)
-            }
-        }
-    }
- 
-    
-    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            completion(data, response, error)
-            }.resume()
-    }
-    */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detaiVC = segue.destination as! VideoDetailViewController
         
-        //detaiVC.selectedVideoId = self.selectedVideoID
         detaiVC.selectedVideo = self.selectedVideo
         
-        
-        /*
-        HCVimeoVideoExtractor.fetchVideoURLFrom(id: selectedVideoID!, completion: { ( video:HCVimeoVideo?, error:Error?) -> Void in
-            if let err = error {
-                print("Error = \(err.localizedDescription)")
-                return
-            }
-            
-            guard let selectedVideo = video else {
-                print("Invalid video object")
-                return
-            }
-        
-            
-            detaiVC.selectedVideo = selectedVideo
-            
-            
-        })
-        */
-        
-
     }
     
 
