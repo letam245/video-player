@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import HCVimeoVideoExtractor
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -17,27 +18,60 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var videos : [Video] = [Video]()
     var selectedVideo : Video?
     
-    let model : VideoModel = VideoModel()
+    let API_KEY = "AIzaSyBJS1VQmAfI5Y7sh21mosJEUdLt6l_-Pzg"
+    let UPLOADS_PLAYIST_ID = "PLlnz4BpiHqRHoiM_yrUY0buI47qGzhkGX"
+    let requestUrl = "https://www.googleapis.com/youtube/v3/playlistItems"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.model.delegate = self
-        //self.videos = model.getVideos()
-        model.getFeedVideos()
-        //model.getPlaylistVideo()
+        
+        
+        //videos = VideoHelper.getFeedVideos()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        
+        getFeedVideos()
         
     }
     
+    
+    func getFeedVideos() {
+        let urlRequest = URLRequest(url: URL(string: requestUrl)!)
+        let urlString = urlRequest.url?.absoluteString
+        var arrayOfVideos = [Video]()
+        
+        Alamofire.request(urlString!, method: .get, parameters: ["maxResults": "25", "part": "snippet", "playlistId": UPLOADS_PLAYIST_ID, "key": API_KEY]).responseJSON {
+            response in
+            
+            if response.result.isSuccess {
+                let resJSON : JSON = JSON(response.result.value!)
+                let videoData = resJSON["items"]
+                
+                for video in videoData.arrayValue {
+                    print(video)
+                    let videoObj = Video()
+                    videoObj.videoID = video["snippet"]["resourceId"]["videoId"].stringValue
+                    videoObj.videoTitle = video["snippet"]["title"].stringValue
+                    videoObj.videoDescription = video["snippet"]["description"].stringValue
+                    videoObj.videoThumbnailUrl = video["snippet"]["thumbnails"]["high"]["url"].stringValue
+                    arrayOfVideos.append(videoObj)
+                }
+                
+            }
+            self.videos = arrayOfVideos
+            self.tableView.reloadData()
+        }
+    }
+    
+
+    
     //MARK: - VideoModelDelegate Method
     func dataReady() {
-        self.videos = self.model.videoArray
+       
         self.tableView.reloadData()
 
     }
