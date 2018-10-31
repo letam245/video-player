@@ -17,6 +17,22 @@
 		B33CA7E021837122001D66A5 /* VideoArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA7DF21837122001D66A5 /* VideoArrayModel.swift */; };
 		B33CA7E22183720C001D66A5 /* VideoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA7E12183720C001D66A5 /* VideoArray.swift */; };
 		B33CA7E421838CD1001D66A5 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA7E321838CD1001D66A5 /* VideoDetailViewController.swift */; };
+		B33CA7F42188D492001D66A5 /* item1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33CA7EA2188D490001D66A5 /* item1.jpg */; };
+		B33CA7F52188D492001D66A5 /* item3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33CA7EB2188D490001D66A5 /* item3.jpg */; };
+		B33CA7F62188D492001D66A5 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33CA7EC2188D490001D66A5 /* 2.jpg */; };
+		B33CA7F72188D492001D66A5 /* item2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33CA7ED2188D490001D66A5 /* item2.jpg */; };
+		B33CA7F82188D492001D66A5 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33CA7EE2188D491001D66A5 /* 1.jpg */; };
+		B33CA7F92188D492001D66A5 /* item5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33CA7EF2188D491001D66A5 /* item5.jpg */; };
+		B33CA7FA2188D492001D66A5 /* item4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33CA7F02188D491001D66A5 /* item4.jpg */; };
+		B33CA7FB2188D492001D66A5 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33CA7F12188D491001D66A5 /* 3.jpg */; };
+		B33CA7FC2188D492001D66A5 /* item6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33CA7F22188D492001D66A5 /* item6.jpg */; };
+		B33CA7FD2188D492001D66A5 /* item7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33CA7F32188D492001D66A5 /* item7.jpg */; };
+		B33CA7FF2188D4D8001D66A5 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA7FE2188D4D8001D66A5 /* CollectionViewController.swift */; };
+		B33CA8012188D891001D66A5 /* Dessert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA8002188D891001D66A5 /* Dessert.swift */; };
+		B33CA8052188DBEE001D66A5 /* SubClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA8042188DBEE001D66A5 /* SubClass.swift */; };
+		B33CA8092188DCED001D66A5 /* DessertViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA8082188DCED001D66A5 /* DessertViewCell.swift */; };
+		B33CA80B2188F697001D66A5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA80A2188F697001D66A5 /* DetailViewController.swift */; };
+		B33CA812218A521E001D66A5 /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA811218A521E001D66A5 /* VideoHelper.swift */; };
 		C7DE85AC331DA78F9BB80D09 /* Pods_video_player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647D43A7F15DDAB92C692DA4 /* Pods_video_player.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +51,22 @@
 		B33CA7DF21837122001D66A5 /* VideoArrayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoArrayModel.swift; sourceTree = "<group>"; };
 		B33CA7E12183720C001D66A5 /* VideoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoArray.swift; sourceTree = "<group>"; };
 		B33CA7E321838CD1001D66A5 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
+		B33CA7EA2188D490001D66A5 /* item1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = item1.jpg; sourceTree = "<group>"; };
+		B33CA7EB2188D490001D66A5 /* item3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = item3.jpg; sourceTree = "<group>"; };
+		B33CA7EC2188D490001D66A5 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		B33CA7ED2188D490001D66A5 /* item2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = item2.jpg; sourceTree = "<group>"; };
+		B33CA7EE2188D491001D66A5 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		B33CA7EF2188D491001D66A5 /* item5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = item5.jpg; sourceTree = "<group>"; };
+		B33CA7F02188D491001D66A5 /* item4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = item4.jpg; sourceTree = "<group>"; };
+		B33CA7F12188D491001D66A5 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		B33CA7F22188D492001D66A5 /* item6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = item6.jpg; sourceTree = "<group>"; };
+		B33CA7F32188D492001D66A5 /* item7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = item7.jpg; sourceTree = "<group>"; };
+		B33CA7FE2188D4D8001D66A5 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		B33CA8002188D891001D66A5 /* Dessert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert.swift; sourceTree = "<group>"; };
+		B33CA8042188DBEE001D66A5 /* SubClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubClass.swift; sourceTree = "<group>"; };
+		B33CA8082188DCED001D66A5 /* DessertViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertViewCell.swift; sourceTree = "<group>"; };
+		B33CA80A2188F697001D66A5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B33CA811218A521E001D66A5 /* VideoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
 		F3C5049C76E75DE67CC08D1E /* Pods-video-player.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-video-player.debug.xcconfig"; path = "Pods/Target Support Files/Pods-video-player/Pods-video-player.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +103,8 @@
 		B3359201218229A000B48FC6 /* video-player */ = {
 			isa = PBXGroup;
 			children = (
+				B33CA810218A5209001D66A5 /* Utilities */,
+				B33CA7E92188D47D001D66A5 /* Images */,
 				B335921521822EA600B48FC6 /* Views */,
 				B335921421822E9A00B48FC6 /* Models */,
 				B3359202218229A000B48FC6 /* AppDelegate.swift */,
@@ -89,6 +123,7 @@
 				B335921821822F5700B48FC6 /* VideoModel.swift */,
 				B33CA7DF21837122001D66A5 /* VideoArrayModel.swift */,
 				B33CA7E12183720C001D66A5 /* VideoArray.swift */,
+				B33CA8002188D891001D66A5 /* Dessert.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -98,8 +133,37 @@
 			children = (
 				B3359204218229A000B48FC6 /* ViewController.swift */,
 				B33CA7E321838CD1001D66A5 /* VideoDetailViewController.swift */,
+				B33CA7FE2188D4D8001D66A5 /* CollectionViewController.swift */,
+				B33CA8042188DBEE001D66A5 /* SubClass.swift */,
+				B33CA8082188DCED001D66A5 /* DessertViewCell.swift */,
+				B33CA80A2188F697001D66A5 /* DetailViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B33CA7E92188D47D001D66A5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B33CA7EE2188D491001D66A5 /* 1.jpg */,
+				B33CA7EC2188D490001D66A5 /* 2.jpg */,
+				B33CA7F12188D491001D66A5 /* 3.jpg */,
+				B33CA7EA2188D490001D66A5 /* item1.jpg */,
+				B33CA7ED2188D490001D66A5 /* item2.jpg */,
+				B33CA7EB2188D490001D66A5 /* item3.jpg */,
+				B33CA7F02188D491001D66A5 /* item4.jpg */,
+				B33CA7EF2188D491001D66A5 /* item5.jpg */,
+				B33CA7F22188D492001D66A5 /* item6.jpg */,
+				B33CA7F32188D492001D66A5 /* item7.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		B33CA810218A5209001D66A5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B33CA811218A521E001D66A5 /* VideoHelper.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		BE48125782992C5FBE57864B /* Pods */ = {
@@ -179,9 +243,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B33CA7FB2188D492001D66A5 /* 3.jpg in Resources */,
+				B33CA7F62188D492001D66A5 /* 2.jpg in Resources */,
+				B33CA7F72188D492001D66A5 /* item2.jpg in Resources */,
+				B33CA7F42188D492001D66A5 /* item1.jpg in Resources */,
 				B335920D218229A000B48FC6 /* LaunchScreen.storyboard in Resources */,
+				B33CA7FC2188D492001D66A5 /* item6.jpg in Resources */,
 				B335920A218229A000B48FC6 /* Assets.xcassets in Resources */,
+				B33CA7FD2188D492001D66A5 /* item7.jpg in Resources */,
+				B33CA7F82188D492001D66A5 /* 1.jpg in Resources */,
 				B3359208218229A000B48FC6 /* Main.storyboard in Resources */,
+				B33CA7FA2188D492001D66A5 /* item4.jpg in Resources */,
+				B33CA7F52188D492001D66A5 /* item3.jpg in Resources */,
+				B33CA7F92188D492001D66A5 /* item5.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,9 +320,15 @@
 				B33CA7E021837122001D66A5 /* VideoArrayModel.swift in Sources */,
 				B33CA7E421838CD1001D66A5 /* VideoDetailViewController.swift in Sources */,
 				B3359205218229A000B48FC6 /* ViewController.swift in Sources */,
+				B33CA812218A521E001D66A5 /* VideoHelper.swift in Sources */,
+				B33CA80B2188F697001D66A5 /* DetailViewController.swift in Sources */,
 				B335921721822ED700B48FC6 /* Video.swift in Sources */,
+				B33CA7FF2188D4D8001D66A5 /* CollectionViewController.swift in Sources */,
+				B33CA8052188DBEE001D66A5 /* SubClass.swift in Sources */,
 				B3359203218229A000B48FC6 /* AppDelegate.swift in Sources */,
 				B335921921822F5700B48FC6 /* VideoModel.swift in Sources */,
+				B33CA8012188D891001D66A5 /* Dessert.swift in Sources */,
+				B33CA8092188DCED001D66A5 /* DessertViewCell.swift in Sources */,
 				B33CA7E22183720C001D66A5 /* VideoArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

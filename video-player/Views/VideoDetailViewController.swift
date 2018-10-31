@@ -32,7 +32,7 @@ class VideoDetailViewController: UIViewController {
 
         
             let width = CGFloat(self.view.frame.size.width)
-            let height = CGFloat(width/320 * 180)
+            let height = CGFloat(width/480) * 360
             
             
             let widthString = "\(width)"

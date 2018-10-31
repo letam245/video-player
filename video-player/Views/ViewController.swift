@@ -9,7 +9,7 @@
 import UIKit
 import HCVimeoVideoExtractor
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, VideoModelDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 
     @IBOutlet weak var tableView: UITableView!
@@ -26,6 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.model.delegate = self
         //self.videos = model.getVideos()
         model.getFeedVideos()
+        //model.getPlaylistVideo()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -44,7 +45,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: - TableView Delegate method
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return (self.view.frame.width / 320) * 180
+        return (self.view.frame.width / 480) * 360
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
