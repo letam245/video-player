@@ -8,15 +8,15 @@
 
 import UIKit
 
-protocol imageSelectionDelegate: class {
-    func didSelect()
+protocol imageSelectionDelegate {
+    func didSelect(selectD: Dessert, index: IndexPath)
 }
 
 class SubClass: UITableViewCell {
     
     var delegate: imageSelectionDelegate?
     var dessert = Dessert.createCategory()
-    var selectedDessrt = ""
+    var selectedDessrt : Dessert?
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -55,23 +55,9 @@ extension SubClass: UICollectionViewDataSource,UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-       selectedDessrt = dessert[indexPath.row].title
-       delegate?.didSelect()
+       selectedDessrt = dessert[indexPath.row]
+       delegate?.didSelect(selectD: selectedDessrt!, index: indexPath)
 
-    }
- 
-    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if( segue.identifier == "gotoDetail" ) {
-            
-            let detailVC = segue.destination as! DetailViewController
-            if let indexPath = sender as? IndexPath {
-                
-                let productToGet = dessert[indexPath.row]
-                detailVC.name = productToGet.title
-                print(productToGet.title)
-            }
-        }
     }
 
 }

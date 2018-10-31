@@ -11,18 +11,11 @@ import UIKit
 
 class CollectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
-
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var pageControll: UIPageControl!
     
-    //var delegate: imageSelectionDelegate?
-    
     var dessert = Dessert.createCategory()
-    
-    var selecT : Dessert?
     var categories = ["Real Estate Training Events","#TOMSVLOG"]
-    
-    
     var timer : Timer!
     var updateCount : Int!
     
@@ -81,14 +74,9 @@ class CollectionViewController: UIViewController, UITableViewDelegate, UITableVi
 
 
 extension CollectionViewController : imageSelectionDelegate {
-    func didSelect() {
-        
-    }
-    
-    func didSelect(selDessert: Dessert, index: IndexPath) {
+
+    func didSelect(selectD: Dessert, index: IndexPath) {
         performSegue(withIdentifier: "gotoDetail", sender: index)
-        selecT = selDessert
-        print(selecT!.images)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
