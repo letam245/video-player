@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
 
 class Video: NSObject {
     
@@ -15,5 +18,4 @@ class Video: NSObject {
     var videoDescription : String = ""
     var videoThumbnailUrl : String = ""
 
-    
 }

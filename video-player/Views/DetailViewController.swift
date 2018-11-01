@@ -21,8 +21,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         labelName.text = name
-        print(selectedDessertImg!)
-        IMG.image = selectedDessertImg
+        
+        //IMG.image = selectedDessertImg
 
         // Do any additional setup after loading the view.
     }
