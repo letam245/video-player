@@ -124,7 +124,7 @@ extension CollectionViewController : imageSelectionDelegate {
             
             let detailVC = segue.destination as! DetailViewController
             if let indexPath = sender as? IndexPath {
-                print(selectedVideoArr!)
+               
                 let videoToOpen = selectedVideoArr![indexPath.row]
 
                 detailVC.name = videoToOpen.videoTitle

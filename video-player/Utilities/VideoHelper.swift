@@ -27,7 +27,7 @@ struct VideoHelper {
                 let videoData = resJSON["items"]
                 
                 for video in videoData.arrayValue {
-                    print(video)
+                    
                     let videoObj = Video()
                     videoObj.videoID = video["snippet"]["resourceId"]["videoId"].stringValue
                     videoObj.videoTitle = video["snippet"]["title"].stringValue

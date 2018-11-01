@@ -26,9 +26,7 @@
 		B33CA7FC2188D492001D66A5 /* item6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33CA7F22188D492001D66A5 /* item6.jpg */; };
 		B33CA7FD2188D492001D66A5 /* item7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B33CA7F32188D492001D66A5 /* item7.jpg */; };
 		B33CA7FF2188D4D8001D66A5 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA7FE2188D4D8001D66A5 /* CollectionViewController.swift */; };
-		B33CA8012188D891001D66A5 /* Dessert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA8002188D891001D66A5 /* Dessert.swift */; };
 		B33CA8052188DBEE001D66A5 /* SubClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA8042188DBEE001D66A5 /* SubClass.swift */; };
-		B33CA8092188DCED001D66A5 /* DessertViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA8082188DCED001D66A5 /* DessertViewCell.swift */; };
 		B33CA80B2188F697001D66A5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA80A2188F697001D66A5 /* DetailViewController.swift */; };
 		B33CA814218A6DB4001D66A5 /* VideoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA813218A6DB4001D66A5 /* VideoViewCell.swift */; };
 		B33CA818218A75E1001D66A5 /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33CA817218A75E1001D66A5 /* VideoHelper.swift */; };
@@ -59,9 +57,7 @@
 		B33CA7F22188D492001D66A5 /* item6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = item6.jpg; sourceTree = "<group>"; };
 		B33CA7F32188D492001D66A5 /* item7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = item7.jpg; sourceTree = "<group>"; };
 		B33CA7FE2188D4D8001D66A5 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		B33CA8002188D891001D66A5 /* Dessert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert.swift; sourceTree = "<group>"; };
 		B33CA8042188DBEE001D66A5 /* SubClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubClass.swift; sourceTree = "<group>"; };
-		B33CA8082188DCED001D66A5 /* DessertViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertViewCell.swift; sourceTree = "<group>"; };
 		B33CA80A2188F697001D66A5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B33CA813218A6DB4001D66A5 /* VideoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewCell.swift; sourceTree = "<group>"; };
 		B33CA817218A75E1001D66A5 /* VideoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
@@ -119,7 +115,6 @@
 			children = (
 				B335921621822ED700B48FC6 /* Video.swift */,
 				B335921821822F5700B48FC6 /* VideoModel.swift */,
-				B33CA8002188D891001D66A5 /* Dessert.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,7 +126,6 @@
 				B33CA7E321838CD1001D66A5 /* VideoDetailViewController.swift */,
 				B33CA7FE2188D4D8001D66A5 /* CollectionViewController.swift */,
 				B33CA8042188DBEE001D66A5 /* SubClass.swift */,
-				B33CA8082188DCED001D66A5 /* DessertViewCell.swift */,
 				B33CA80A2188F697001D66A5 /* DetailViewController.swift */,
 				B33CA813218A6DB4001D66A5 /* VideoViewCell.swift */,
 			);
@@ -324,8 +318,6 @@
 				B33CA8052188DBEE001D66A5 /* SubClass.swift in Sources */,
 				B3359203218229A000B48FC6 /* AppDelegate.swift in Sources */,
 				B335921921822F5700B48FC6 /* VideoModel.swift in Sources */,
-				B33CA8012188D891001D66A5 /* Dessert.swift in Sources */,
-				B33CA8092188DCED001D66A5 /* DessertViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
